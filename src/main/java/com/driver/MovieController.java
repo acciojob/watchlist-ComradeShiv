@@ -58,7 +58,7 @@ public class MovieController {
 
     @GetMapping("/get-all-movies")
     public ResponseEntity findAllMovies() {
-        ArrayList movieList = movieService.findAllMovies();
+        ArrayList<Movie> movieList = movieService.findAllMovies();
         if(movieList.size() == 0)
             return new ResponseEntity<>("List is Empty", HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(movieList, HttpStatus.FOUND);
