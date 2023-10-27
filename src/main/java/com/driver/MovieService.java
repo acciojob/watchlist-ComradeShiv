@@ -35,7 +35,7 @@ public class MovieService {
         return movieRepository.getMoviesByDirectorName(directorName);
     }
 
-    public ArrayList findAllMovies() {
+    public ArrayList<Movie> findAllMovies() {
         return movieRepository.findAllMovies();
     }
 
