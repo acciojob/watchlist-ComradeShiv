@@ -36,7 +36,7 @@ public class MovieController {
     public ResponseEntity getMovieByName(@PathVariable("name") String movieName) {
         Movie movie = movieService.getMovieByName(movieName);
         if(movie == null)
-            return new ResponseEntity<>("It doesn't exist", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(new Movie(), HttpStatus.NOT_FOUND);
         return new ResponseEntity(movie, HttpStatus.FOUND);
     }
 
@@ -44,7 +44,7 @@ public class MovieController {
     public ResponseEntity getDirectorByName(@PathVariable("name") String directorName) {
         Director director = movieService.getDirectorByName(directorName);
         if(director == null)
-            return new ResponseEntity<>("It doesn't exist", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(new Director(), HttpStatus.NOT_FOUND);
         return new ResponseEntity(director, HttpStatus.FOUND);
     }
 
