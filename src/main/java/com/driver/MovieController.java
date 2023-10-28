@@ -52,7 +52,7 @@ public class MovieController {
     public ResponseEntity getMoviesByDirectorName(@PathVariable("director") String directorName) {
         ArrayList<String> movieList = movieService.getMoviesByDirectorName(directorName);
         if(movieList.size() == 0)
-            return new ResponseEntity<>("List is Empty", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(new ArrayList<String>(), HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(movieList, HttpStatus.FOUND);
     }
 
@@ -60,7 +60,7 @@ public class MovieController {
     public ResponseEntity findAllMovies() {
         ArrayList<Movie> movieList = movieService.findAllMovies();
         if(movieList.size() == 0)
-            return new ResponseEntity<>("List is Empty", HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(new ArrayList<Movie>(), HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(movieList, HttpStatus.FOUND);
     }
 
