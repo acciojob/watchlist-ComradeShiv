@@ -53,10 +53,10 @@ public class MovieRepository {
         return directorMovieDB.get(directorName);
     }
 
-    public ArrayList<Movie> findAllMovies() {
-        ArrayList<Movie> movieList = new ArrayList<>();
+    public ArrayList<String> findAllMovies() {
+        ArrayList<String> movieList = new ArrayList<>();
         for(Map.Entry<String, Movie> movie: movieDB.entrySet())
-            movieList.add(movie.getValue());
+            movieList.add(movie.getKey());
         return movieList;
     }
 
